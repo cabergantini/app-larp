@@ -43,3 +43,22 @@ O banco e os domínios devem evitar atalhos que impossibilitem Narrative Graph, 
 
 ## D-014 — GitHub é a fonte de verdade do projeto
 Decisões, PRD, specs e código aprovados vivem neste repositório. Conversas com agentes não substituem documentação versionada.
+
+
+## D-015 — V1 é Vampire: The Masquerade / MET
+O primeiro produto suporta exclusivamente Vampire: The Masquerade/MET. A arquitetura deve ser genre-extensible, mas não deve introduzir abstrações, requisitos ou complexidade de Garou, Mage, Changeling, Wraith ou outros gêneros no MVP.
+
+## D-016 — Player propõe; alteração oficial passa por workflow
+O jogador pode solicitar compras e alterações da própria ficha. A proposta não altera silenciosamente o estado oficial. Alterações passam por workflow de validação/aprovação do ST e, quando aplicável, Rules/Approval Engine para outras autoridades.
+
+## D-017 — Actions/Downtimes fazem parte da V1
+Actions/Downtimes são parte do produto inicial, não backlog pós-MVP. Devem ser modelados de forma compatível com futura integração ao Narrative Engine e Scene/Chronicle Memory.
+
+## D-018 — Migração é requisito do MVP
+Uma crônica existente deve conseguir migrar personagens sem reconstrução manual integral. O PRD deve definir estratégia e formatos suportados após investigação dos dados/exportações disponíveis, com validação humana do resultado importado.
+
+## D-019 — Desenvolvimento começa com uma crônica piloto real
+A primeira implantação será validada com uma crônica brasileira real. Nenhuma regra, nome, permissão ou fluxo exclusivo da crônica piloto deve ser hardcoded; configurações locais pertencem à camada Chronicle/House Rules/Settings.
+
+## D-020 — Princípio Vampire-first, genre-extensible
+O modelo deve evitar bloqueios óbvios à expansão futura para outros gêneros, mas YAGNI prevalece: não construir sistemas multi-genre antes de existir requisito aprovado.
