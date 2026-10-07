@@ -539,12 +539,17 @@ EARN, SPEND, ADJUSTMENT, OPENING_BALANCE, TRANSFER/MIGRATION_METADATA.
 
 Avoid "Set balance" as ordinary operation. Administrative corrections should retain before/after and reason, preferably as auditable adjustment rather than destructive rewrite.
 
-### Legacy import
-A suspicious legacy date (e.g. epoch-era 1969 values observed in the sample) must:
-- preserve original raw value;
-- be flagged;
-- allow human reconciliation;
-- never be silently normalized into a fabricated date.
+### Historical dates and legacy import
+Vampire characters may legitimately have IC history, recognition, status, acquisitions or other events dated decades or centuries before the player's current chronicle participation. **Age of a date alone is never evidence that the date is invalid.**
+
+Import behavior:
+- preserve the original date and raw source value;
+- do not flag a date merely because it is old;
+- distinguish IC/effective date from system-recorded/import date when the source allows it;
+- flag only concrete parsing/consistency problems (invalid date format, impossible calendar value, contradictory source data, failed mapping, or explicit import uncertainty);
+- never silently replace an old date with a modern date.
+
+If a source does not reveal whether a historical date is an IC/effective date, legacy system date, or migration artifact, preserve it and mark the semantic meaning as unresolved rather than declaring it erroneous.
 
 Bulk legacy spend text must be parsed as proposal/mapping, then reviewed.
 
@@ -622,7 +627,7 @@ Not every field requires every answer, but the model must not make these impossi
 - teacher identity from ambiguous text;
 - rule source;
 - whether a historical entry was correct;
-- true event date from malformed legacy date;
+- semantic meaning of an ambiguous historical/import date;
 - visibility/secrecy of imported notes.
 
 ## 25. Proposed V1 Sheet Navigation
